@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 import VerticalBarsNoise from './VerticalBarsNoise';
 
 const Footer: React.FC = () => {
@@ -128,13 +129,13 @@ const Footer: React.FC = () => {
             <h4 className="footer-nav-title">LEGAL</h4>
             <ul className="footer-nav-list">
               <li className="footer-nav-item">
-                <a href="/privacy" className="footer-nav-link">Privacy Policy</a>
+                <Link href="/privacy" className="footer-nav-link">Privacy Policy</Link>
               </li>
               <li className="footer-nav-item">
-                <a href="/cookies" className="footer-nav-link">Cookie Policy</a>
+                <Link href="/cookies" className="footer-nav-link">Cookie Policy</Link>
               </li>
               <li className="footer-nav-item">
-                <a href="/terms-and-conditions" className="footer-nav-link">Terms &amp; Conditions</a>
+                <Link href="/terms-and-conditions" className="footer-nav-link">Terms &amp; Conditions</Link>
               </li>
             </ul>
           </div>
