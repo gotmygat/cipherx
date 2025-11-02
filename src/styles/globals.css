@@ -1,0 +1,3078 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'Title';
+  src: url('/title.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --orange: #FF7122;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #E4E4E4;
+  overflow-x: hidden; /* Evita scroll horizontal */
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad - Método más agresivo */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+  display: none !important;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+  display: none !important;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  display: none !important;
+}
+
+/* Aplicar a todos los elementos que puedan tener scroll */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+#__next {
+  min-height: 100%;
+  width: 100%;
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Container class with GPU acceleration */
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 61px 77px 0 77px; /* Padding reducido 15% adicional */
+  box-sizing: border-box;
+  z-index: 1;
+  background-color: transparent;
+  /* GPU optimization for smooth performance */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Optimize composite layers */
+  contain: layout style paint;
+}
+
+/* Media queries para container responsivo - sincronizado con second-section */
+@media (max-width: 1200px) {
+  .container {
+    padding: 61px 40px 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 61px 20px 0 20px;
+  }
+}
+
+/* 🚀 CONSISTENT PARENT CONTAINER RULES: Apply same padding and structure rules to all parent containers */
+/* These rules ensure perfect alignment across all sections */
+
+/* #__next > section - Apply same padding and basic structure as .container */
+#__next > section {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 61px 77px 0 77px; /* Same as .container */
+  box-sizing: border-box;
+  z-index: 1;
+  background-color: transparent;
+  /* GPU optimization for smooth performance */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Optimize composite layers */
+  contain: layout style paint;
+}
+
+/* #__next > div.mobile-container - Apply same padding as .container */
+#__next > div.mobile-container {
+  padding: 61px 77px 0 77px; /* Same as .container */
+  box-sizing: border-box;
+  /* GPU optimization for smooth performance */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Optimize composite layers */
+  contain: layout style paint;
+}
+
+/* #__next > div.faq-section - Apply same padding as .container and sections but no vertical padding */
+#__next > div.faq-section {
+  min-height: 100vh !important; /* Use minHeight for flexible content like FAQ */
+  width: 100vw !important; /* Same as #__next > section */
+  position: relative !important; /* Same as #__next > section */
+  top: 0 !important; /* Same as #__next > section */
+  left: 0 !important; /* Same as #__next > section */
+  padding: 0 77px 0 77px !important; /* Remove top padding to connect with third-section */
+  box-sizing: border-box !important;
+  z-index: 1 !important; /* Same as #__next > section */
+  /* GPU optimization for smooth performance */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Optimize composite layers */
+  contain: layout style paint;
+}
+
+/* Responsive media queries for all parent containers to maintain consistency */
+@media (max-width: 1200px) {
+  #__next > section,
+  #__next > div.mobile-container {
+    padding: 61px 40px 0 40px !important; /* Increase specificity to override inline styles */
+  }
+  
+  #__next > div.faq-section {
+    padding: 0 40px 0 40px !important; /* Remove top padding to connect with third-section */
+  }
+}
+
+@media (max-width: 900px) {
+  #__next > section,
+  #__next > div.mobile-container {
+    padding: 61px 35px 0 35px !important; /* Intermediate padding for 900px */
+  }
+  
+  #__next > div.faq-section {
+    padding: 0 35px 0 35px !important; /* Remove top padding to connect with third-section */
+  }
+}
+
+@media (max-width: 768px) {
+  #__next > section,
+  #__next > div.mobile-container {
+    padding: 61px 20px 0 20px !important; /* Increase specificity to override inline styles */
+  }
+  
+  #__next > div.faq-section {
+    padding: 0 20px 0 20px !important; /* Remove top padding to connect with third-section */
+  }
+}
+/* 🚀 PERFORMANCE OPTIMIZED: Contenedor hijo que contendra todo el contenido y tiene los bordes */
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  border-left: 0.5px solid #9E9E9E;
+  border-right: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Para posicionar elementos absolutos */
+  /* GPU acceleration for child elements */
+  will-change: auto;
+  transform: translateZ(0);
+  /* Optimize rendering performance */
+  contain: layout;
+}
+
+/* Elemento para simular border izquierdo del tercer b2-child-top */
+.border-test {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  width: 0.5px;
+  height: 6%;
+  background-color: #9E9E9E; /* Color correcto del grid */
+  z-index: 1; /* Muy bajo para que quede detrás del video */
+  pointer-events: none;
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Estilos para el contenedor del video hero */
+.hero-video {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0); /* GPU-accelerated transform */
+  width: 60%;           /* % del contenedor padre */
+  max-width: 450px;     /* Máximo original */
+  height: 90%;          /* % del contenedor padre */
+  max-height: 850px;    /* Máximo original */
+  z-index: 15;
+  top: 3%; /* Bajado un poco desde arriba */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Video performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  /* Optimize video rendering */
+  contain: layout;
+}
+
+/* RESPONSIVE DESIGN: Hero video para resoluciones <900px - Siguiendo patrones del proyecto */
+@media (max-width: 900px) {
+  .hero-video {
+    width: 50% !important;      /* Reducido de 60% a 50% (-17%) */
+    max-width: 380px !important; /* Reducido de 450px a 380px (-15%) */
+    height: 75% !important;      /* Reducido de 90% a 75% (-17%) */
+    max-height: 680px !important; /* Reducido de 850px a 680px (-20%) */
+    top: -200px !important;          /* Subido más arriba desde 5% */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-video {
+    width: 45% !important;      /* Reducido adicional para tablets */
+    max-width: 320px !important; /* Reducido para tablets */
+    height: 65% !important;      /* Reducido adicional para tablets */
+    max-height: 550px !important; /* Reducido para tablets */
+    top: 0% !important;          /* Subido más arriba desde 8% */
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-video {
+    width: 40% !important;      /* Más pequeño en mobile */
+    max-width: 280px !important; /* Máximo más pequeño en mobile */
+    height: 55% !important;      /* Altura reducida para mobile */
+    max-height: 450px !important; /* Altura máxima reducida */
+    top: -2% !important;         /* Subido aún más en mobile desde 10% */
+  }
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Video dentro del contenedor hero */
+.hero-video video {
+  height: 100%;
+  width: auto;
+  /* Video-specific GPU optimizations */
+  will-change: auto;
+  transform: translateZ(0);
+  /* Smooth video playback */
+  backface-visibility: hidden;
+}
+
+/* Sección superior - 50% con borde inferior */
+.section-top {
+  width: 100%;
+  height: 50%;
+  border-bottom: 0.5px solid #9E9E9E;
+  border-left: 0.5px solid #9E9E9E;
+  border-right: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HIJO1-PARTE1 - 30% del hijo1 */
+.child1-top {
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+/* HIJO1-PARTE2 - 70% del hijo1 con borde superior */
+.child1-bottom {
+  width: 100%;
+  height: 70%;
+  border-top: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  position: relative; /* Para posicionar el SVG absoluto */
+}
+
+/* Columnas de A1 - 25% cada una */
+.a1-col1, .a1-col2, .a1-col3, .a1-col4 {
+  width: 25%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bordes verticales para A1 columnas */
+.a1-col2, .a1-col3, .a1-col4 {
+  border-left: 0.5px solid #9E9E9E;
+}
+
+/* Columnas de A2 - 25% cada una */
+.a2-col1, .a2-col2, .a2-col3, .a2-col4 {
+  width: 25%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bordes verticales para A2 columnas */
+.a2-col2, .a2-col3, .a2-col4 {
+  border-left: 0.5px solid #9E9E9E;
+}
+
+/* Contenedor especial para efectos de marquee */
+.marquee-container {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  /* overflow: hidden; - Removido para permitir que la barra social salga del viewport */
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative; /* Para posicionar el marquee text */
+}
+
+/* Estilos para a2-child2-1 y sus hijos */
+.a2-child2-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.a2-child2-1 .square-icon-text,
+.a2-child2-1 .a2-child2-subtitle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bordes izquierdos para elementos de la columna 2 */
+.a2-child2-2,
+.a2-child2-3 {
+  border-left: 1px solid #9E9E9E;
+  height: 100%; /* Altura del 100% para ocupar todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Estilos para a2-child2-4, idénticos a a2-child2-1 */
+.a2-child2-4 {
+  border-left: 1px solid #9E9E9E;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Marquee text dentro del contenedor - usa el sistema avanzado existente */
+.marquee-container .text-marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* Marquee performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: layout style;
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Text marquee animation */
+.marquee-container .text-single {
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  will-change: transform;
+  display: inline-flex;
+  align-items: center;
+  min-width: 100%;
+  /* Enhanced GPU optimization */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.marquee-container .text {
+  padding: 0;
+  font-size: 22vh;
+  display: inline-block;
+  margin-right: 4rem;
+  font-family: arial;
+  font-weight: bold;
+  color: black;
+  flex-shrink: 0;
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Barra vertical de redes sociales */
+.social-bar {
+  z-index: 20;
+  border: 1px solid #9e9e9e;
+  flex-direction: column;
+  gap: 0;
+  display: flex;
+  position: absolute;
+  top: -0.5%;
+  right: -57px;
+  /* GPU optimization for smooth animations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Social items with GPU acceleration */
+.social-item {
+  width: 55px;
+  height: 55px;
+  background-color: #FF7122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, background-color 0.4s ease; /* Optimized transitions */
+  animation: socialPulse 3.43s infinite;
+  /* GPU optimizations for smooth animations */
+  will-change: transform, background-color;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Animaciones secuenciales para cada icono */
+.social-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.social-item:nth-child(2) {
+  animation-delay: 0.57s;
+}
+
+.social-item:nth-child(3) {
+  animation-delay: 1.14s;
+}
+
+.social-item:nth-child(4) {
+  animation-delay: 1.72s;
+}
+
+.social-item:nth-child(5) {
+  animation-delay: 2.29s;
+}
+
+/* Keyframes para la animación */
+@keyframes socialPulse {
+  0%, 80%, 100% {
+    background-color: #FF7122;
+  }
+  40% {
+    background-color: #E4E4E4;
+  }
+}
+
+/* Hover: detener animación y hacer más grande */
+.social-bar:hover .social-item {
+  animation-play-state: paused;
+}
+
+.social-item:hover {
+  background-color: #e6651e;
+  transform: scale(1.1);
+}
+
+.social-icon {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Sección inferior - 50% */
+.section-bottom {
+  width: 100%;
+  height: 50%;
+  border-left: 0.5px solid #9E9E9E;
+  border-right: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* B1-A1 - HIJO2-PARTE1 - 50% */
+.child2-top {
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+/* B1-A2 - HIJO2-PARTE2 - 50% sin borde superior */
+.child2-bottom {
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  z-index: 20;
+  position: relative; /* Para posicionar el tubo absolute */
+  overflow: hidden;  /* Oculta exceso del tubo */
+}
+
+/* 🚀 PERFORMANCE OPTIMIZED: Elemento hijo absolute para el tubo.webp */
+.tubo-container {
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0); /* GPU-accelerated transform */
+  top: 60px; /* Toca el techo del padre (child2-bottom) */
+  width: 360px;
+  height: 100%; /* Ocupa toda la altura del padre */
+  background-image: url('/tubo.webp');
+  background-repeat: repeat-y;
+  background-size: 290px auto;
+  background-position: center top;
+  z-index: -1; /* Muy atrás, detrás de todo */
+  pointer-events: none; /* No interfiere con interacciones */
+  /* Background image performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: paint;
+}
+
+/* Columnas de B1-A1 - 25% cada una */
+.b1-col1, .b1-col2, .b1-col3, .b1-col4 {
+  width: 25%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quitar cualquier borde de b1-col1 específicamente */
+.b1-col1 {
+  border: none !important;
+}
+
+/* Bordes verticales para B1-A1 columnas */
+.b1-col2, .b1-col3, .b1-col4 {
+  border-left: 0.5px solid #9E9E9E;
+}
+
+/* Altura específica para b1-col4 */
+.b1-col4 {
+  height: 100% !important; /* Restaurado a altura original */
+}
+
+/* Columnas de B1-A2 - 25% cada una - ahora con flex column */
+.b2-col1, .b2-col2, .b2-col3, .b2-col4 {
+  width: 25%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bordes verticales para B1-A2 columnas */
+.b2-col2, .b2-col3, .b2-col4 {
+  border-left: 0.5px solid #9E9E9E;
+}
+
+/* Z-index muy bajo para b2-col3 para que quede detrás del video */
+.b2-col3 {
+  z-index: -1;
+  border-left: none !important;
+}
+
+/* Hijos de las columnas b2 - distribución 15%-70%-15% */
+.b2-child-top {
+  width: 100%;
+  height: 24%; /* Reducido de 30% a 24% (20% menos) */
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+/* Agregar border izquierdo al b2-child-middle en b2-col3 */
+.b2-col3 .b2-child-middle {
+  border-left: 0.5px solid #9E9E9E !important;
+}
+
+.b2-child-middle {
+  width: 100%;
+  height: 76%; /* Aumentado de 70% a 76% (ganó el 6% del b2-child-top) */
+  box-sizing: border-box;
+  background-color: #F6F6F6; /* Cambia el color de fondo a F6F6F6 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border-top: 0.5px solid #9E9E9E;
+  border-bottom: 0.5px solid #9E9E9E;
+}
+
+.b2-child-middle:hover {
+  background-color: black;
+}
+
+.b2-child-middle img {
+  transition: filter 0.5s ease;
+}
+
+.b2-child-middle:hover img {
+  filter: invert(1) brightness(2);
+}
+
+.b2-child-bottom {
+  
+  width: 100%;
+  height: 15%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.b2-col3 .b2-child-bottom {
+  border-left: 0.5px solid #9E9E9E;
+
+}
+
+
+/* Navbar styles */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 77px;
+  box-sizing: border-box;
+  background-color: #E4E4E4;
+  border-left: 0.5px solid #9E9E9E;
+  border-right: 0.5px solid #9E9E9E;
+}
+
+/* Borde inferior acortado (no llega a las esquinas) */
+.navbar::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
+  height: 0.5px;
+  background-color: #9E9E9E;
+}
+
+/* Filo bevel izquierdo - solo línea diagonal */
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -52px;
+  width: 58px;
+  height: 58px;
+  border-top: 0.5px solid #9E9E9E;
+  transform: rotate(45deg);
+  transform-origin: bottom left;
+  overflow: hidden;
+}
+
+/* Filo bevel derecho usando el elemento nav-far-right - solo línea diagonal */
+.nav-far-right::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -52px;
+  width: 58px;
+  height: 58px;
+  border-top: 0.5px solid #9E9E9E;
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+  overflow: hidden;
+}
+
+.nav-left, .nav-center, .nav-far-right {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* Asegurar que los marcos sean visibles */
+}
+
+.nav-left {
+  justify-content: flex-start;
+  position: relative; /* Para que los pseudo-elementos funcionen correctamente */
+}
+
+.nav-center {
+  /* border-left removido */
+  border-left: 0.5px solid #9E9E9E;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  padding: 0 10px;
+}
+
+.nav-far-right {
+  /* border-left removido */
+  border-left: 0.5px solid #9E9E9E;
+
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.nav-right {
+  gap: 26px;
+  justify-content: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 17.97px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #666;
+}
+
+/* Estilos para el contenedor de enlaces del navbar */
+.nav-link-container {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-size: 17.97px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  min-width: fit-content;
+  position: relative;
+  padding: 4px 6px; /* Padding aumentado para área más grande */
+  margin: -4px -6px; /* Compensar el padding */
+}
+
+.nav-link-container:hover {
+  color: #000;
+}
+
+/* Marcos en L para hover - esquina superior izquierda */
+.nav-link-container::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 9.6px;
+  height: 6px;
+  border-top: 2px solid #FF7122;
+  border-left: 2px solid #FF7122;
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+
+/* Marcos en L para hover - esquina inferior derecha */
+.nav-link-container::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 9.6px;
+  height: 6px;
+  border-bottom: 2px solid #FF7122;
+  border-right: 2px solid #FF7122;
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+
+/* Mostrar marcos al hacer hover */
+.nav-link-container:hover::before,
+.nav-link-container:hover::after {
+  opacity: 1;
+}
+
+/* Estilos para el HyperText en navbar */
+.navbar-hypertext {
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: none;
+  overflow: visible !important;
+  width: 100%;
+  pointer-events: none; /* Permitir que los clics pasen a través del texto al contenedor */
+}
+
+.navbar-hypertext span {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Contenedor estable para el logo */
+.logo-wrapper {
+  position: relative;
+  width: 109px !important;  /* Aumentado 15% de 95px */
+  height: 51px !important;  /* Aumentado 15% de 44px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Permitir que el SVG se desborde */
+  margin-left: 10px;
+}
+
+/* Estilos para el SVG tech-labs-logo en nav-left */
+.tech-labs-logo {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave y elegante */
+  color: black; /* Color por defecto */
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 109px !important;  /* Aumentado 15% de 95px */
+  height: 51px !important;  /* Aumentado 15% de 44px */
+  cursor: pointer;
+  z-index: 10;
+}
+
+.tech-labs-logo:hover {
+  color: black; /* Mantener color negro al hacer hover */
+  transform: translate(-50%, -50%) scale(1.06) !important; /* Mantener centrado y escalar 6% */
+}
+
+/* Estilos para los marcos en L del logo */
+.tech-labs-logo-container .corner-frame {
+  opacity: 0 !important;
+  transition: opacity 0.36s ease;
+}
+
+/* Mostrar marcos al hacer hover sobre el logo */
+.tech-labs-logo:hover .corner-frame {
+  opacity: 1 !important;
+}
+
+/* Media queries para el logo responsive */
+@media (max-width: 1200px) {
+  .logo-wrapper {
+    width: 97px !important;  /* Aumentado 15% de 84px */
+    height: 45px !important;  /* Aumentado 15% de 39px */
+  }
+  .tech-labs-logo {
+    width: 97px !important;
+    height: 45px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo-wrapper {
+    width: 85px !important;  /* Aumentado 15% de 74px */
+    height: 39px !important;  /* Aumentado 15% de 34px */
+  }
+  .tech-labs-logo {
+    width: 85px !important;
+    height: 39px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-wrapper {
+    width: 77px !important;  /* Aumentado 15% de 67px */
+    height: 36px !important;  /* Aumentado 15% de 31px */
+  }
+  .tech-labs-logo {
+    width: 77px !important;
+    height: 36px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo-wrapper {
+    width: 69px !important;  /* Aumentado 15% de 60px */
+    height: 32px !important;  /* Aumentado 15% de 28px */
+  }
+  .tech-labs-logo {
+    width: 69px !important;
+    height: 32px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-wrapper {
+    width: 61px !important;  /* Aumentado 15% de 53px */
+    height: 29px !important;  /* Aumentado 15% de 25px */
+  }
+  .tech-labs-logo {
+    width: 61px !important;
+    height: 29px !important;
+  }
+}
+
+
+
+.nav-far-right {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Estilos para el botón BUY $LVM */
+.buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: #F6F6F6;
+  border: 0.5px solid #9E9E9E;
+  color: black;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 55%;
+  height: 60%;
+  /* Copiando el clip-path bevel de button-primary-border */
+  -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  position: relative;
+  text-decoration: none;
+  min-width: fit-content;
+}
+
+.buy-button:hover {
+  background-color: black;
+  color: white;
+  border-color: #E4E4E4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Marcos en L para hover del botón BUY - esquina superior izquierda */
+.buy-button::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 9.6px;
+  height: 6px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+
+/* Marcos en L para hover del botón BUY - esquina inferior derecha */
+.buy-button::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 9.6px;
+  height: 6px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+
+/* Mostrar marcos al hacer hover */
+.buy-button:hover::before,
+.buy-button:hover::after {
+  opacity: 1;
+}
+
+.buy-text {
+  white-space: nowrap;
+}
+
+.dexscreener-icon {
+  width: 49px;
+  height: 49px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.buy-button:hover .dexscreener-icon {
+  filter: invert(1) brightness(1.2);
+  transform: scale(1.1);
+}
+
+/* Media queries para navbar responsive */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0 40px;
+  }
+  .navbar a {
+    font-size: 15.40px;
+  }
+  .nav-link-container {
+    font-size: 15.40px;
+  }
+  .nav-left {
+    font-size: 14px;
+  }
+  .nav-far-right {
+    font-size: 12px;
+  }
+  .nav-center {
+    gap: 20px;
+    justify-content: center;
+  }
+  .buy-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    gap: 1px;
+    width: 60%;
+    height: 55%;
+  }
+  .dexscreener-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar a {
+    font-size: 12.83px;
+  }
+  .nav-link-container {
+    font-size: 12.83px;
+  }
+  .nav-left {
+    font-size: 12px;
+  }
+  .nav-far-right {
+    font-size: 10px;
+  }
+  .nav-center {
+    gap: 15px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar a {
+    font-size: 10.27px;
+  }
+  .nav-link-container {
+    font-size: 10.27px;
+  }
+  .nav-left {
+    font-size: 10px;
+  }
+  .nav-far-right {
+    font-size: 8px;
+  }
+  .nav-center {
+    gap: 11px;
+    justify-content: center;
+  }
+}
+
+/* Responsive styles for nav-center flex-wrap */
+@media (max-width: 1200px) {
+  .nav-center {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-center {
+    gap: 15px;
+    padding: 0 8px;
+  }
+  
+  .navbar a {
+    font-size: 16px;
+  }
+  
+  .nav-link-container {
+    font-size: 16px;
+  }
+}
+
+/* Estilos para hamburger menu */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 4px;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Panel del menú móvil */
+.mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001; /* Mayor que el navbar (1000) */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-panel.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 350px;
+  height: 100vh;
+  background-color: white;
+  padding: 100px 30px 30px 30px;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-left: 0.5px solid #9E9E9E;
+}
+
+.mobile-menu-panel.open .mobile-menu-content {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+  transform: scale(1.1);
+  color: #FF7122;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.mobile-menu-links > div {
+  padding: 8px 0;
+}
+
+.mobile-menu-links .nav-link-container {
+  font-size: 18px;
+  padding: 12px 16px;
+  margin: -12px -16px;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-menu-buy-button {
+  margin-top: auto;
+  width: 100%;
+}
+
+.mobile-menu-buy-button .buy-button {
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  font-size: 16px;
+  padding: 12px 20px;
+}
+
+/* Marquee Text Styles */
+.scroll {
+  height: 60vh;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-marquee {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.text-single {
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  will-change: transform;
+  z-index: 1;
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+.text {
+  padding: 0;
+  font-size: 6.4rem;
+  display: inline-block;
+  margin-right: 2rem;
+  font-family: arial;
+  font-weight: bold;
+}
+
+/* Estilos para los contenedores hijo del marquee en posición absoluta VERTICAL */
+.marquee-child1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  padding: 10px;
+  pointer-events: none; /* Permite que el drag pase a través */
+}
+
+.marquee-child2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 22vh; /* Misma altura que el texto principal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 2;
+  pointer-events: none; /* Permite que el drag pase a través */
+}
+
+.marquee-child3 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  padding: 10px;
+  pointer-events: none; /* Permite que el drag pase a través */
+}
+
+/* Cuadrados naranjas para marquee-child1 y marquee-child3 */
+.orange-square-left {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #ff7120;
+}
+
+.orange-square-right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #ff7120;
+}
+
+/* Estilos para el botón con bevel */
+.button-primary-border {
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  padding: 12px 65.4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 1.8vh;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+}
+
+.button-primary-border:hover {
+  background-color: transparent;
+  border-color: var(--orange);
+  color: black;
+  transform: translateY(-1px);
+}
+
+/* Contenedor para el texto y botón en B1-col1 */
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.cta-text {
+  font-size: 2.0vh;
+  line-height: 1.2;
+  color: black;
+  width: 98%;
+  text-align: left;
+  word-spacing: 0.5em;
+  letter-spacing: 0.2px;
+  font-family: 'Roboto Mono', monospace !important;
+  padding-top: 20px;
+}
+
+.a2-child1-1 {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.a2-child1-1-hijo1 {
+  background-color: #F6F6F6;
+  width: 50%; /* Ocupa el 50% del espacio disponible */
+  border-right: 0.5px solid #9E9E9E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a2-child1-1-hijo1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.a2-child1-1-hijo1-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 179px; /* Establece el ancho máximo de la imagen */
+}
+
+.a2-child1-1-hijo2 {
+  width: 50%; /* Ocupa el 50% del espacio disponible */
+  border-right: 0.5px solid #9E9E9E;
+  position: relative;
+}
+
+.a2-child1-1-hijo2-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px; /* Original width of detailBox2.svg */
+}
+
+/* Borde izquierdo para a1-2-4-image-container */
+.a1-2-4-image-container {
+  border-left: 0.5px solid #9E9E9E;
+}
+
+/* Estilos para a2-child1-2 */
+.a2-child1-2 {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  background-color: #E4E4E4;
+}
+
+/* Media queries para a1-2-text-combined */
+/* Estilos para los marcos en L */
+.focus-frame-top-left,
+.focus-frame-top-right,
+.focus-frame-bottom-left,
+.focus-frame-bottom-right {
+  position: absolute;
+  width: 16px; /* Reducido un 20% */
+  height: 16px; /* Reducido un 20% */
+  padding: 4px; /* Reducido un 20% */
+  box-sizing: border-box; /* Para que el padding no aumente el tamaño total */
+}
+
+.focus-frame-top-left {
+  top: 20px; /* Más adentro */
+  left: 20px; /* Más adentro */
+  border-top: 2px solid #BEBEBE;
+  border-left: 2px solid #BEBEBE;
+}
+
+.focus-frame-top-right {
+  top: 20px; /* Más adentro */
+  right: 20px; /* Más adentro */
+  border-top: 2px solid #BEBEBE;
+  border-right: 2px solid #BEBEBE;
+}
+
+.focus-frame-bottom-left {
+  bottom: 20px; /* Más adentro */
+  left: 20px; /* Más adentro */
+  border-bottom: 2px solid #BEBEBE;
+  border-left: 2px solid #BEBEBE;
+}
+
+.focus-frame-bottom-right {
+  bottom: 20px; /* Más adentro */
+  right: 20px; /* Más adentro */
+  border-bottom: 2px solid #BEBEBE;
+  border-right: 2px solid #BEBEBE;
+}
+
+/* Estilos para el contenedor unificado de Incubation */
+.a2-child1-3-4-incubation {
+  color: #000;
+  flex: 2; /* Ocupa el espacio de los dos divs anteriores */
+  text-align: center;
+  background-color: #F6F6F6; /* Cambia el color de fondo a F6F6F6 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  font-weight: bold;
+  height: 100%; /* Asegura que ocupe el 100% de la altura disponible */
+  border-left: 0.5px solid #BEBEBE;
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+
+  
+}
+
+/* Media queries para el texto de Incubation */
+@media (max-width: 1200px) {
+  .a2-child1-3-4-incubation {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .a2-child1-3-4-incubation {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 700px) {
+  .a2-child1-3-4-incubation {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .a2-child1-3-4-incubation {
+    font-size: 18px;
+  }
+}
+
+/* Estilos para el texto con icono cuadrado */
+.square-icon-text {
+  display: flex;
+  align-items: center;
+  gap: 6.4px; /* Reducido en 20% */
+  font-size: 1.375rem;
+  font-weight: 600; /* Texto más grueso */
+}
+
+/* EXCLUIR Our Signals de las reglas generales de square-icon-text */
+.square-icon-text:not(.third-content-wrapper-child1-child1-header) {
+  font-size: 1.375rem;
+}
+
+@media (max-width: 768px) {
+  .square-icon-text:not(.third-content-wrapper-child1-child1-header) {
+    font-size: 0.9rem !important; /* Tamaño de fuente más pequeño para móviles */
+  }
+}
+
+/* Estilos simples y directos para Our Signals con píxeles fijos */
+.third-content-wrapper-child1-child1-header.square-icon-text {
+  font-size: 18px !important; /* FHD base */
+}
+
+/* REGLA ESPECÍFICA PARA EL SPAN INTERNO */
+.third-content-wrapper-child1-child1-header-text.our-signals-text-roboto-mono-force {
+  font-size: 18px !important; /* FHD base */
+}
+
+/* Medium screens (769px to 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .third-content-wrapper-child1-child1-header.square-icon-text {
+    font-size: 14px !important;
+  }
+  
+  .third-content-wrapper-child1-child1-header-text.our-signals-text-roboto-mono-force {
+    font-size: 14px !important;
+  }
+}
+
+/* Tablets (501px to 768px) */
+@media (max-width: 768px) and (min-width: 501px) {
+  .third-content-wrapper-child1-child1-header.square-icon-text {
+    font-size: 12px !important;
+  }
+  
+  .third-content-wrapper-child1-child1-header-text.our-signals-text-roboto-mono-force {
+    font-size: 12px !important;
+  }
+}
+
+/* Mobile (≤500px) */
+@media (max-width: 500px) {
+  .third-content-wrapper-child1-child1-header.square-icon-text {
+    font-size: 10px !important;
+  }
+  
+  .third-content-wrapper-child1-child1-header-text.our-signals-text-roboto-mono-force {
+    font-size: 10px !important;
+  }
+}
+
+.square-icon-text::before {
+  content: '';
+  display: inline-block;
+  width: 8px; /* Reducido en 20% */
+  height: 8px; /* Reducido en 20% */
+  background-color: black;
+}
+
+/* Estilos para el contenedor A2-h2-1 */
+.a2-h2-1 {
+  flex: 1; /* Ocupa el espacio restante */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-left: none; /* Quitamos el borde izquierdo */
+  background-color: transparent;
+}
+
+/* Estilos para el título de A2-h2-1 */
+.a2-h2-1-title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espacio entre el cuadrado y el texto */
+}
+
+/* Pseudo-elemento para el cuadrado negro */
+.a2-h2-1-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px; /* Reducido en 20% */
+  height: 8px; /* Reducido en 20% */
+  background-color: black;
+  margin-right: 6.4px; /* Reducido en 20% */
+}
+
+/* Estilos para el subtítulo de A2-h2-1 */
+.a2-h2-1-subtitle {
+  font-size: 16px;
+  color: #636363; /* Color del texto */
+  font-weight: normal;
+  margin-top: 5px; /* Espacio entre título y subtítulo */
+}
+
+
+/* Estilos para la pantalla de carga */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HIGH SPECIFICITY CSS RULES FOR OUR SIGNALS ROBOTO MONO */
+.our-signals-roboto-mono-force,
+.our-signals-roboto-mono-force * {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.our-signals-text-roboto-mono-force {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+/* Triple selector for maximum specificity */
+.third-content-wrapper .our-signals-roboto-mono-force .our-signals-text-roboto-mono-force {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.loading-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.loading-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+}
+
+.loading-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF7122;
+  box-sizing: border-box;
+}
+
+/* Contenedores con position relative para los elementos de borde absolutos */
+.loading-col-1,
+.loading-col-2,
+.loading-col-3,
+.loading-col-4,
+.loading-col-5,
+.loading-col-6,
+.loading-col-1-child-1,
+.loading-col-2-child-1,
+.loading-col-3-child-1,
+.loading-col-4-child-1,
+.loading-col-5-child-1,
+.loading-col-6-child-1,
+.loading-col-1-child-2-child-1,
+.loading-col-2-child-2-child-1,
+.loading-col-3-child-2-child-1,
+.loading-col-4-child-2-child-1,
+.loading-col-5-child-2-child-1,
+.loading-col-6-child-2-child-1 {
+  position: relative;
+}
+
+/* Elementos de borde absolutos */
+.loading-border {
+  position: absolute;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Bordes derechos */
+.loading-border-right {
+  top: 0;
+  right: 0;
+  width: 0.5px;
+  height: 100%;
+}
+
+/* Bordes inferiores */
+.loading-border-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5px;
+}
+
+/* Clase activadora para mostrar bordes */
+.loading-border.show {
+  opacity: 1;
+}
+
+/* Capa de bordes fijos - NO se animan */
+.loading-borders-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Contenedores de bordes que replican la estructura de las columnas */
+.loading-border-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Contenedor para child-1 en la capa de bordes */
+.loading-border-child-1 {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+/* Contenedor para child-2 en la capa de bordes */
+.loading-border-child-2 {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Contenedor para child-2-child-1 en la capa de bordes */
+.loading-border-child-2-child-1 {
+  width: 100%;
+  height: 70%;
+  position: relative;
+}
+
+/* Columnas de padding (primera y última) */
+.loading-column-padding {
+  width: 77px; /* Mismo valor que el padding original */
+  background-color: #FF7122;
+}
+
+/* Columnas de contenido (2, 3, 4, 5) */
+.loading-column-content {
+  flex: 1; /* Se distribuyen equitativamente el espacio restante */
+}
+
+.loading-digit {
+  font-size: 35.7vh;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+  user-select: none;
+  line-height: 0.7;
+  width: 85%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -2vh;
+  
+}
+
+/* Estilos para los hijos de las columnas del loading screen */
+
+/* Child-1 de cada columna (primer hijo directo) */
+.loading-col-1-child-1,
+.loading-col-2-child-1,
+.loading-col-3-child-1,
+.loading-col-4-child-1,
+.loading-col-5-child-1,
+.loading-col-6-child-1 {
+  width: 100%;
+  height: 50%;
+  background-color: #FF7122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+  /* border-bottom removido - se agregará dinámicamente */
+}
+
+/* Child-2 de cada columna (segundo hijo directo) */
+.loading-col-1-child-2,
+.loading-col-2-child-2,
+.loading-col-3-child-2,
+.loading-col-4-child-2,
+.loading-col-5-child-2,
+.loading-col-6-child-2 {
+  width: 100%;
+  height: 50%;
+  background-color: #FF7122;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+/* Child-2-Child-1 (70% altura) */
+.loading-col-1-child-2-child-1,
+.loading-col-2-child-2-child-1,
+.loading-col-3-child-2-child-1,
+.loading-col-4-child-2-child-1,
+.loading-col-5-child-2-child-1,
+.loading-col-6-child-2-child-1 {
+  width: 100%;
+  height: 70%;
+  background-color: #FF7122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+  /* border-bottom removido - se agregará dinámicamente */
+}
+
+/* Child-2-Child-2 (30% altura) */
+.loading-col-1-child-2-child-2,
+.loading-col-2-child-2-child-2,
+.loading-col-3-child-2-child-2,
+.loading-col-4-child-2-child-2,
+.loading-col-5-child-2-child-2,
+.loading-col-6-child-2-child-2 {
+  width: 100%;
+  height: 30%;
+  background-color: #FF7122;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+}
+
+
+
+/* Responsive para la pantalla de carga */
+@media (max-width: 1200px) {
+  .loading-column-padding {
+    width: 40px; /* Mismo valor que el padding responsive del container */
+  }
+  .loading-digit {
+    font-size: 31.45vh; /* 37vh reducido 15% */
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-column-padding {
+    width: 20px; /* Mismo valor que el padding responsive del container */
+  }
+  .loading-digit {
+    font-size: 28.9vh; /* 34vh reducido 15% */
+  }
+}
+
+@media (max-width: 500px) {
+  .loading-digit {
+    font-size: 25.5vh; /* 30vh reducido 15% */
+  }
+}
+
+/* Media queries para CTA responsivo */
+@media (max-width: 1200px) {
+  .cta-text {
+    font-size: 1.8vh;
+    width: 98%;
+  }
+  .button-primary-border {
+    padding: 10px 50px;
+    font-size: 1.6vh;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .cta-text {
+    font-size: 1.6vh;
+    width: 100%;
+  }
+  .button-primary-border {
+    padding: 8px 35px;
+    font-size: 1.4vh;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .cta-text {
+    font-size: 1.4vh;
+    line-height: 1.3;
+  }
+  .button-primary-border {
+    padding: 6px 25px;
+    font-size: 1.2vh;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .cta-text {
+    font-size: 1.2vh;
+    line-height: 1.4;
+  }
+  .button-primary-border {
+    padding: 5px 18px;
+    font-size: 1.0vh;
+  }
+  .a2-child1-1-hijo2 {
+    flex: 0.2; /* Reduce el tamaño de hijo2 al mínimo en pantallas de hasta 500px */
+  }
+}
+
+/* third-section: fondo absoluto dentro de third-content-wrapper */
+.third-content-wrapper {
+  position: relative;
+  overflow: visible !important; /* Forzar que no se oculte el desbordamiento */
+}
+
+.third-content-wrapper .third-bg {
+  position: absolute;
+  left: -15%; /* Expandido más hacia los lados */
+  right: -15%; /* Expandido más hacia los lados */
+  top: 20%; /* Mover la imagen más arriba para dar más espacio */
+  bottom: -40%; /* Extender mucho más hacia abajo para evitar cortes */
+  background-image: url('/background.webp');
+  background-size: 75%; /* Ligeramente más pequeña para aprovechar el espacio extra */
+  background-position: center center; /* Centrada en el nuevo contenedor */
+  background-repeat: no-repeat;
+  z-index: 0; /* Detrás del contenido */
+}
+
+.third-content-wrapper .third-content {
+  position: relative; /* Asegura que quede por encima del fondo */
+  z-index: 1;
+}
+
+/* Asegurar que third-section también permita overflow visible */
+.third-section {
+  overflow: visible !important;
+}
+
+/* Font family overrides for specific classes */
+.a1-2-text-combined {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+.all-projects-box {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+.all-projects-box span {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+.third-content-wrapper-child1-child1 {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+.third-content-wrapper-child1-child1 span {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+/* Responsive styles for third-content-wrapper-child1-child1 */
+@media (max-width: 1200px) {
+  .third-content-wrapper-child1-child1 {
+    width: 85% !important;
+    height: 68% !important;
+    padding: 18px 36px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .third-content-wrapper-child1-child1 {
+    width: 90% !important;
+    height: 70% !important;
+    padding: 16px 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .third-content-wrapper-child1-child1 {
+    width: 95% !important;
+    height: 75% !important;
+    padding: 14px 28px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .third-content-wrapper-child1-child1 {
+    width: 95% !important;
+    height: 78% !important;
+    padding: 12px 24px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .third-content-wrapper-child1-child1 {
+    width: 98% !important;
+    height: 80% !important;
+    padding: 10px 20px !important;
+  }
+}
+
+/* Responsive font sizes for MARKET and SCOPE spans inside third-content-wrapper-child1-child1 */
+@media (max-width: 1200px) {
+  .third-content-wrapper-child1-child1 span {
+    font-size: 5.5rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .third-content-wrapper-child1-child1 span {
+    font-size: 4.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .third-content-wrapper-child1-child1 span {
+    font-size: 3.5rem !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .third-content-wrapper-child1-child1 span {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .third-content-wrapper-child1-child1 span {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .third-content-wrapper-child1-child1 span {
+    font-size: 2rem !important;
+  }
+}
+
+/* Apply Title font to span children of text-single for marquee text */
+.text-single span {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+/* Apply Title font to span children in marquee container */
+.marquee-container .text-single span {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+/* Apply Title font to the .text class inside marquee */
+.marquee-container .text {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+}
+
+/* Responsive width adjustments for third-content-wrapper children */
+/* Base styles (FHD) - 50% 50% already defined in component */
+
+/* 1200px breakpoint - Child1 starts getting more space */
+@media (max-width: 1200px) {
+  .third-content-wrapper-child1 {
+    width: 55% !important;
+  }
+  .third-content-wrapper-child2 {
+    width: 45% !important;
+  }
+}
+
+/* 900px breakpoint - Child1 gets even more space */
+@media (max-width: 900px) {
+  .third-content-wrapper-child1 {
+    width: 60% !important;
+  }
+  .third-content-wrapper-child2 {
+    width: 40% !important;
+  }
+}
+
+/* 768px breakpoint - Child1 dominates more */
+@media (max-width: 768px) {
+  .third-content-wrapper-child1 {
+    width: 65% !important;
+  }
+  .third-content-wrapper-child2 {
+    width: 35% !important;
+  }
+}
+
+/* 700px breakpoint - Child1 takes even more space */
+@media (max-width: 700px) {
+  .third-content-wrapper-child1 {
+    width: 70% !important;
+  }
+  .third-content-wrapper-child2 {
+    width: 30% !important;
+  }
+}
+
+/* 500px breakpoint - Child1 takes most space */
+@media (max-width: 500px) {
+  .third-content-wrapper-child1 {
+    width: 75% !important;
+  }
+  .third-content-wrapper-child2 {
+    width: 25% !important;
+  }
+}
+
+/* 400px breakpoint - Child1 takes maximum space while keeping Child2 visible */
+@media (max-width: 400px) {
+  .third-content-wrapper-child1 {
+    width: 80% !important;
+  }
+  .third-content-wrapper-child2 {
+    width: 20% !important;
+  }
+}
+
+/* FAQ SECTION RESPONSIVE STYLES - Match third-section behavior */
+/* Base styles are inherited from the #__next > div.faq-section rules above */
+
+/* FAQ Content Wrapper - Same as third-section content-wrapper but without borders */
+.faq-content-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* GPU acceleration for child elements */
+  will-change: auto;
+  transform: translateZ(0);
+  /* Optimize rendering performance */
+  contain: layout;
+}
+
+/* FAQ Header Grid - Specific border adjustments */
+#__next > div.faq-section > div > div:nth-child(1) {
+  border-left: 0.5px solid #9E9E9E !important;
+  border-right: 0.5px solid #9E9E9E !important;
+  border-bottom: 0.5px solid #9E9E9E !important;
+  border-top: none !important; /* Remove top border to connect with third-section */
+}
+
+/* FAQ Header First Div - Apply Title font family and make it responsive */
+#__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+  font-family: 'Title', 'Roboto Mono', monospace !important;
+  font-size: 64px !important; /* Base size FHD */
+}
+
+/* FAQ Header Second Div - Add spheres.webp background and make it bigger */
+#__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div {
+  background-image: url('/spheres.webp') !important;
+  background-size: 120% !important; /* Make image 20% bigger than container */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  transform: scale(1.3) !important; /* Make container 30% bigger */
+  transform-origin: center !important;
+}
+
+/* FAQ Header Second Div Inner - Add spheres.webp background (more specific selector) */
+#__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+  background-image: url('/spheres.webp') !important;
+  background-size: 120% !important; /* Make image 20% bigger than container */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  transform: scale(1.3) !important; /* Make container 30% bigger */
+  transform-origin: center !important;
+}
+
+/* Responsive scaling for FAQ spheres container */
+@media (max-width: 1200px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div,
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+    background-size: 110% !important; /* Slightly smaller image */
+    transform: scale(1.2) !important; /* Reduce container scale */
+  }
+}
+
+@media (max-width: 900px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div,
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+    background-size: 100% !important; /* Normal image size */
+    transform: scale(1.1) !important; /* Smaller container scale */
+  }
+}
+
+@media (max-width: 768px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div,
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+    background-size: 90% !important; /* Smaller image */
+    transform: scale(1.0) !important; /* Normal container size */
+  }
+}
+
+@media (max-width: 700px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div,
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+    background-size: 80% !important; /* Even smaller image */
+    transform: scale(0.9) !important; /* Smaller container */
+  }
+}
+
+@media (max-width: 500px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div,
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+    background-size: 70% !important; /* Much smaller image for mobile */
+    transform: scale(0.8) !important; /* Much smaller container */
+  }
+}
+
+@media (max-width: 400px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div,
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(2) > div > div {
+    background-size: 60% !important; /* Smallest image size */
+    transform: scale(0.7) !important; /* Smallest container */
+  }
+}
+
+/* Responsive font sizes for FAQ Header Title */
+@media (max-width: 1200px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+    font-size: 48px !important; /* Reducido 25% */
+  }
+}
+
+@media (max-width: 900px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+    font-size: 36px !important; /* Reducido 44% */
+  }
+}
+
+@media (max-width: 768px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+    font-size: 28px !important; /* Reducido 56% */
+  }
+}
+
+@media (max-width: 700px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+    font-size: 24px !important; /* Reducido 63% */
+  }
+}
+
+@media (max-width: 500px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+    font-size: 20px !important; /* Reducido 69% */
+  }
+}
+
+@media (max-width: 400px) {
+  #__next > div.faq-section > div > div:nth-child(1) > div:nth-child(1) > div {
+    font-size: 18px !important; /* Reducido 72% */
+  }
+}
+
+/* FAQ Second Element - Add left and right borders */
+#__next > div.faq-section > div > div:nth-child(2) {
+  border-left: 0.5px solid #9E9E9E !important;
+  border-right: 0.5px solid #9E9E9E !important;
+}
+
+/* FAQ Header Grid Responsive Styles */
+.faq-section > div:first-child {
+  /* Header grid inherits padding from parent, no additional padding needed */
+}
+
+/* FAQ Content Responsive Adjustments */
+@media (max-width: 1200px) {
+  .faq-section > div:first-child {
+    height: 180px; /* Slightly smaller header on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-section > div:first-child {
+    height: 160px; /* Even smaller header on tablets */
+    grid-template-columns: 1fr; /* Stack columns vertically on mobile */
+    grid-template-rows: auto auto auto; /* Three rows instead of columns */
+  }
+  
+  .faq-section button {
+    padding: 20px 30px !important; /* Reduce button padding on mobile */
+  }
+  
+  .faq-section h2 {
+    font-size: 20px !important; /* Smaller h2 on mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .faq-section > div:first-child {
+    height: 140px; /* Smallest header on mobile */
+  }
+  
+  .faq-section button {
+    padding: 15px 20px !important; /* Further reduce button padding */
+    font-size: 16px !important; /* Smaller font on mobile */
+  }
+  
+  .faq-section h2 {
+    font-size: 18px !important; /* Even smaller h2 on mobile */
+  }
+  
+  .faq-section p {
+    font-size: 12px !important; /* Smaller paragraph text */
+  }
+}
+
+/* FOOTER SECTION STYLES - Consistent with page design */
+.footer-section {
+  min-height: auto !important; /* Allow content to expand naturally */
+  width: 100vw !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  padding: 0 77px 80px 77px !important; /* Added large bottom padding for beautiful spacing */
+  box-sizing: border-box !important;
+  z-index: 1 !important;
+  background-color: transparent !important;
+  /* GPU optimization for smooth performance */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Optimize composite layers */
+  contain: layout style paint;
+}
+
+/* Footer Content Wrapper - Same as other content wrappers */
+.footer-content-wrapper {
+  width: 100%;
+  height: 100%;
+  border-left: 0.5px solid #9E9E9E;
+  border-right: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* GPU acceleration for child elements */
+  will-change: auto;
+  transform: translateZ(0);
+  /* Optimize rendering performance */
+  contain: layout;
+}
+
+/* Footer Top Row - Logo + Form */
+.footer-top-row {
+  width: 100%;
+  display: flex;
+  border-bottom: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+}
+
+/* Footer Logo Column - 25% */
+.footer-logo-col {
+  width: 25%;
+  background-color: #F6F6F6;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-container img {
+  width: 200%;
+}
+
+.footer-logo-image {
+  width: 100px;
+  height: auto;
+  max-width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo-image:hover {
+  opacity: 0.65;
+}
+
+/* Footer Form Column - 75% */
+.footer-form-col {
+  width: 75%;
+  display: flex;
+  border-left: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+}
+
+.footer-form-container {
+  width: 100%;
+  display: flex;
+}
+
+/* Footer Form Left - Input Section */
+.footer-form-left {
+  flex: 1;
+  background-color: #F6F6F6;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1px;
+  box-sizing: border-box;
+}
+
+.footer-form-title {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 24px 0;
+  line-height: 140%;
+}
+
+.footer-form-input-wrapper {
+  border-bottom: 1px solid #636363;
+  padding-bottom: 16px;
+}
+
+.footer-form-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 16px;
+  color: black;
+  padding: 8px 0;
+  outline: none;
+  line-height: 150%;
+}
+
+.footer-form-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+/* Footer Form Right - Button Section */
+.footer-form-right {
+  width: 33.33%;
+  padding: 42px 24px 36px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.footer-form-note {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 11px;
+  color: #636363;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+  line-height: 100%;
+  text-align: right;
+}
+
+.footer-form-button {
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  -webkit-clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Mono', monospace !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+}
+
+.footer-form-button:hover {
+  background-color: transparent;
+  border-color: var(--orange);
+  transform: translateY(-1px);
+}
+
+.footer-form-button-text {
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 100%;
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+/* Footer Form Error and Success States */
+.footer-form-input.error {
+  border-bottom-color: #ff4444 !important;
+}
+
+.footer-form-input-wrapper .footer-form-error {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 11px;
+  color: #ff4444;
+  margin-top: 8px;
+  line-height: 100%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.footer-form-button.success {
+  background-color: #4CAF50 !important;
+  border-color: #4CAF50 !important;
+  animation: successPulse 0.6s ease-in-out;
+}
+
+.footer-form-button.success:hover {
+  background-color: #4CAF50 !important;
+  border-color: #4CAF50 !important;
+  transform: none;
+}
+
+.footer-form-button.submitting {
+  background-color: #cccccc !important;
+  border-color: #cccccc !important;
+  cursor: not-allowed;
+}
+
+.footer-form-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer Navigation Row - 4 columns */
+.footer-nav-row {
+  width: 100%;
+  display: flex;
+  border-bottom: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+}
+
+.footer-nav-col {
+  width: 25%;
+  padding: 64px 24px 48px 24px;
+  border-left: 0.5px solid #9E9E9E;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-col:first-child {
+  border-left: none;
+}
+
+/* Navigation column for social links */
+.footer-nav-col:last-child {
+  align-items: flex-end;
+}
+
+.footer-nav-title {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  margin: 0 0 26px 0;
+  font-weight: 400;
+  line-height: 115%;
+}
+
+.footer-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 115%;
+}
+
+.footer-nav-item {
+  margin-bottom: 19px;
+}
+
+.footer-nav-link {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 13px;
+  color: black;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.footer-nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Social Links */
+.footer-social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.footer-social-link {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: text-decoration 0.3s ease;
+  line-height: 100%;
+}
+
+.footer-social-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer Copyright Row */
+.footer-copyright-row {
+  width: 100%;
+  border-bottom: 0.5px solid #9E9E9E;
+  background-color: #F6F6F6;
+  box-sizing: border-box;
+}
+
+.footer-copyright-content {
+  padding: 56px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 100%;
+}
+
+.footer-copyright-year {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-right: 24px;
+}
+
+.footer-copyright-text {
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+/* Footer Bottom Graphic Section - Takes remaining vertical space */
+.footer-bottom-graphic-row {
+  width: 100%;
+  flex: 1; /* Takes all remaining space in flex container */
+  min-height: 200px; /* Minimum height to ensure visibility */
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.footer-graphic-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch; /* Changed from center to stretch */
+  justify-content: stretch; /* Changed from center to stretch */
+  padding: 0; /* Removed padding to allow full space usage */
+  box-sizing: border-box;
+  border-bottom: 0.5px solid #9E9E9E; /* Add bottom border */
+}
+
+.footer-graphic-content {
+  width: 100%;
+  height: 100%;
+  display: block; /* Changed from flex to block */
+  background-color: transparent;
+  /* Ready for graphic content */
+  position: relative;
+  min-height: 150px; /* Ensure minimum height */
+}
+
+/* Orange corner decorations */
+.footer-decor {
+  background-color: var(--orange);
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  z-index: 2;
+}
+
+.footer-decor-top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.footer-decor-top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.footer-decor-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+.footer-decor-bottom-right {
+  bottom: 12px;
+  right: 12px;
+}
+
+/* Footer Responsive Styles */
+@media (max-width: 1200px) {
+  .footer-section {
+    padding: 0 40px 80px 40px !important; /* Keep bottom padding */
+    min-height: auto !important; /* Allow content to expand naturally */
+  }
+  
+  .footer-logo-image {
+    width: 80px;
+  }
+  
+  .footer-form-title {
+    font-size: 16px;
+  }
+  
+  .footer-form-input {
+    font-size: 14px;
+  }
+  
+  .footer-nav-col {
+    padding: 50px 20px 40px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-section {
+    padding: 0 35px 80px 35px !important; /* Keep bottom padding */
+    min-height: auto !important; /* Allow content to expand naturally */
+  }
+  
+  /* Stack top row vertically */
+  .footer-top-row {
+    flex-direction: column;
+  }
+  
+  .footer-logo-col {
+    width: 100%;
+    padding-bottom: 8px;
+  }
+  
+  .footer-form-col {
+    width: 100%;
+    border-left: none;
+  }
+  
+  .footer-form-container {
+    flex-direction: column;
+  }
+  
+  .footer-form-left {
+    margin: 0;
+  }
+  
+  .footer-form-right {
+    width: 100%;
+    align-items: flex-start;
+    padding: 28px 24px 36px 24px;
+  }
+  
+  .footer-form-note {
+    text-align: left;
+  }
+  
+  /* Navigation row wraps */
+  .footer-nav-row {
+    flex-wrap: wrap;
+    border-bottom: none;
+  }
+  
+  .footer-nav-col {
+    width: 50%;
+    border-left: 0.5px solid #9E9E9E;
+    padding: 28px 20px;
+  }
+  
+  .footer-nav-col:nth-child(odd) {
+    border-left: none;
+  }
+  
+  .footer-nav-col:nth-child(2) {
+    text-align: right;
+    align-items: flex-end;
+  }
+  
+  .footer-nav-col:last-child {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .footer-social-links {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 0 20px 80px 20px !important; /* Keep bottom padding */
+    min-height: auto !important; /* Allow content to expand naturally */
+  }
+  
+  .footer-logo-col {
+    padding: 30px 20px 0 20px;
+  }
+  
+  .footer-form-left {
+    padding: 46px 20px 0 20px;
+  }
+  
+  .footer-form-right {
+    padding: 28px 20px 36px 20px;
+  }
+  
+  .footer-form-note {
+    display: none; /* Hide note on mobile */
+  }
+  
+  .footer-form-title {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  
+  .footer-form-input {
+    font-size: 14px;
+  }
+  
+  .footer-nav-col {
+    padding: 20px;
+  }
+  
+  .footer-nav-title {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  
+  .footer-nav-link,
+  .footer-social-link {
+    font-size: 14px;
+  }
+  
+  .footer-copyright-content {
+    padding: 0 20px 36px 20px;
+    font-size: 13px;
+  }
+  
+  .footer-copyright-year {
+    font-size: 13px;
+  }
+  
+  .footer-copyright-text {
+    font-size: 13px;
+  }
+  
+  /* Smaller decorations */
+  .footer-decor {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .footer-decor-top-left {
+    top: 6px;
+    left: 6px;
+  }
+  
+  .footer-decor-top-right {
+    top: 6px;
+    right: 6px;
+  }
+  
+  .footer-decor-bottom-left {
+    bottom: 6px;
+    left: 6px;
+  }
+  
+  .footer-decor-bottom-right {
+    bottom: 6px;
+    right: 6px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-section {
+    min-height: auto !important;
+    padding: 0 77px 60px 77px !important; /* Slightly smaller bottom padding for mobile */
+  }
+  
+  .footer-logo-image {
+    width: 114px;
+  }
+  
+  .footer-form-button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
