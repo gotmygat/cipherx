@@ -238,8 +238,6 @@ export default function PrivacyPolicy() {
                 content: [
                   'For questions, concerns, or to exercise your rights, contact:',
                   'Email: legal@cipherx.com',
-                  'Address: [Your Company Address]',
-                  'Privacy Officer: [Name/Department]'
                 ],
               },
             ].map((section, idx) => (
