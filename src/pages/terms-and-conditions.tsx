@@ -281,8 +281,8 @@ export default function TermsAndConditions() {
                 title: '17. Contact Information',
                 content: [
                   'For questions, concerns, or support, contact:',
-                  'Email: legal@cipherx.example',
-                  'Support: support@cipherx.example',
+                  'Email: legal@cipherx.com',
+                  'Support: support@cipherx.com',
                   'Address: [Your Company Address]',
                   'Legal Department: [Contact Information]'
                 ],

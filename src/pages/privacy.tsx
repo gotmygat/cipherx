@@ -203,7 +203,7 @@ export default function PrivacyPolicy() {
                   'Portability: Receive your data in a machine-readable format.',
                   'Objection/Restriction: Object to or restrict certain processing activities.',
                   'Withdraw consent: For consent-based processing, withdraw at any time.',
-                  'To exercise these rights, contact us at legal@cipherx.example'
+                  'To exercise these rights, contact us at legal@cipherx.com'
                 ],
               },
               {
@@ -237,7 +237,7 @@ export default function PrivacyPolicy() {
                 title: '12. Contact Us',
                 content: [
                   'For questions, concerns, or to exercise your rights, contact:',
-                  'Email: legal@cipherx.example',
+                  'Email: legal@cipherx.com',
                   'Address: [Your Company Address]',
                   'Privacy Officer: [Name/Department]'
                 ],

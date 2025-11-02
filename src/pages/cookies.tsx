@@ -235,7 +235,7 @@ export default function CookiePolicy() {
                 title: '12. Contact Us',
                 content: [
                   'Questions about our cookie practices? Contact:',
-                  'Email: legal@cipherx.example',
+                  'Email: legal@cipherx.com',
                   'Privacy Team: [Department/Contact]',
                   'See our Privacy Policy for more information on data handling.'
                 ],
